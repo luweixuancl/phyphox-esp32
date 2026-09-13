@@ -1,0 +1,53 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  strings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check phyphox UI string limits
+        run: python tools/check_phyphox_limits.py
+
+  firmware:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: firmware
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - 01_hello_phyphox
+          - 02_analog
+          - 03_dht22
+          - 04_bme280
+          - 05_ultrasonic
+          - 06_bh1750
+          - 07_maker_kit
+          - 08_i2c_scan
+          - 09_photogate
+          - 10_imu
+          - 11_phone_accel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.platformio
+            firmware/.pio
+          key: pio-${{ runner.os }}-${{ hashFiles('firmware/platformio.ini') }}-${{ matrix.env }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PlatformIO
+        run: pip install --upgrade platformio
+        working-directory: .
+      - name: Build ${{ matrix.env }}
+        run: pio run -e ${{ matrix.env }}

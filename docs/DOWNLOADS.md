@@ -7,6 +7,20 @@
 
 发布标签：[`v0.1.0`](https://github.com/luweixuancl/phyphox-esp32/releases/tag/v0.1.0)（若尚未创建 Release 页面，文件仍可通过下方 raw / 镜像链接下载）
 
+新增示例（光电门 / IMU / I2C 扫描 / 手机加速度计）的预编译文件为 **v0.1.1**，合入 `main` 后可用下方链接。旧的 01–07 仍用 v0.1.0。
+
+---
+
+## 新增固件（v0.1.1）
+
+| 固件 | 用途 | GitHub | 镜像1 (ghproxy) | 镜像2 (jsDelivr) |
+|------|------|--------|-----------------|------------------|
+| 08 I2C scan | 串口扫地址 | [下载](https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/08_i2c_scan-merged-v0.1.1.bin) | [镜像](https://ghproxy.net/https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/08_i2c_scan-merged-v0.1.1.bin) | [CDN](https://cdn.jsdelivr.net/gh/luweixuancl/phyphox-esp32@main/firmware/dist/08_i2c_scan-merged-v0.1.1.bin) |
+| 09 Photogate | 光电门周期 | [下载](https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/09_photogate-merged-v0.1.1.bin) | [镜像](https://ghproxy.net/https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/09_photogate-merged-v0.1.1.bin) | [CDN](https://cdn.jsdelivr.net/gh/luweixuancl/phyphox-esp32@main/firmware/dist/09_photogate-merged-v0.1.1.bin) |
+| 10 IMU | MPU6050 加速度 | [下载](https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/10_imu-merged-v0.1.1.bin) | [镜像](https://ghproxy.net/https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/10_imu-merged-v0.1.1.bin) | [CDN](https://cdn.jsdelivr.net/gh/luweixuancl/phyphox-esp32@main/firmware/dist/10_imu-merged-v0.1.1.bin) |
+| 11 Phone | 手机加速度计→LED | [下载](https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/11_phone_accel-merged-v0.1.1.bin) | [镜像](https://ghproxy.net/https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/11_phone_accel-merged-v0.1.1.bin) | [CDN](https://cdn.jsdelivr.net/gh/luweixuancl/phyphox-esp32@main/firmware/dist/11_phone_accel-merged-v0.1.1.bin) |
+| 新增 merged 打包 | ZIP | [下载](https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/phyphox-esp32-c3-firmware-extra-v0.1.1.zip) | [镜像](https://ghproxy.net/https://github.com/luweixuancl/phyphox-esp32/raw/main/firmware/dist/phyphox-esp32-c3-firmware-extra-v0.1.1.zip) | [CDN](https://cdn.jsdelivr.net/gh/luweixuancl/phyphox-esp32@main/firmware/dist/phyphox-esp32-c3-firmware-extra-v0.1.1.zip) |
+
 ---
 
 ## 一键打包（全部合并固件）

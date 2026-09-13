@@ -15,7 +15,7 @@
 | ESP32-C3 开发板 | DevKitM-1 / 常见 C3 SuperMini 等 |
 | 安卓或 iOS 手机 | 安装 [phyphox](https://phyphox.org/download/) |
 | USB 线 | 能传输数据的线 |
-| 传感器（按课程选） | 电位器、DHT22、BME280、HC-SR04、BH1750 等 |
+| 传感器（按课程选） | 电位器、DHT22、BME280、HC-SR04、BH1750、光电门、MPU6050 等 |
 
 默认引脚见 [`firmware/include/board_pins.h`](firmware/include/board_pins.h)，接线说明见 [docs/hardware.md](docs/hardware.md)。
 
@@ -54,6 +54,10 @@ pio device monitor
 | `05_ultrasonic` | 测距 | HC-SR04 |
 | `06_bh1750` | 光照 | BH1750 |
 | `07_maker_kit` | 多传感器综合 | 可编译开关 |
+| `08_i2c_scan` | I2C 地址扫描（串口） | MPU6050 / BME280 / BH1750 |
+| `09_photogate` | 周期 / 挡光时间 | 光电门 |
+| `10_imu` | 三轴加速度 | MPU6050 |
+| `11_phone_accel` | 手机加速度计驱动 LED | 无需外接模块 |
 
 示例：
 
@@ -69,7 +73,10 @@ firmware/                 PlatformIO 工程
   lib/MakerPhyphox/       phyphox 实验辅助库
   examples/               各传感器示例
 docs/hardware.md          接线与电平注意
+docs/flash.md             烧录与连接
 docs/activities.md        活动教案建议
+docs/DOWNLOADS.md         预编译固件下载
+micropython/              可选 MicroPython 入门
 ```
 
 ## 活动建议
@@ -79,6 +86,7 @@ docs/activities.md        活动教案建议
 1. **第 1 课**：Hello Phyphox（连接与读图）
 2. **第 2 课**：模拟传感器（变量控制、校准）
 3. **第 3 课**：测距或温湿度（提出问题 → 测数据 → 解释）
+4. **第 6–8 课**：光电门、自由落体、手机控制板子（见教案）
 
 ## 开发说明
 

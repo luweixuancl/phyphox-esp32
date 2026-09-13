@@ -23,7 +23,16 @@
 #define PIN_DHT 10
 #endif
 
-// I2C（BME280 / BH1750 等）
+#ifndef PIN_BOOT_BTN
+#define PIN_BOOT_BTN 9
+#endif
+
+// 光电门 / 对射红外数字输出
+#ifndef PIN_PHOTOGATE
+#define PIN_PHOTOGATE 3
+#endif
+
+// I2C（BME280 / BH1750 / MPU6050 等）
 #ifndef PIN_I2C_SDA
 #define PIN_I2C_SDA 4
 #endif

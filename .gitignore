@@ -5,10 +5,9 @@
 .vscode/launch.json
 .vscode/ipch
 
-# Build / IDE
+# Build / IDE (keep firmware/dist/*.bin for downloads)
 *.o
 *.elf
-*.bin
 *.map
 .idea/
 *.swp

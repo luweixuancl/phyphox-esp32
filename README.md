@@ -19,6 +19,12 @@
 
 默认引脚见 [`firmware/include/board_pins.h`](firmware/include/board_pins.h)，接线说明见 [docs/hardware.md](docs/hardware.md)。
 
+## 固件下载
+
+无需自行编译时可直接下载已构建固件（含国内镜像）：
+
+→ **[固件下载地址（点击下载）](docs/DOWNLOADS.md)**
+
 ## 快速开始
 
 ### 1. 编译与烧录（PlatformIO）

@@ -27,7 +27,26 @@
 
 ## 快速开始
 
-### 1. 编译与烧录（PlatformIO）
+本仓库提供两套固件实现：
+
+| 路径 | 框架 | 说明 |
+|------|------|------|
+| [`firmware/`](firmware/) | Arduino / PlatformIO | 入门快，示例多 |
+| [`idf/`](idf/) | **ESP-IDF 5 + NimBLE** | 原生 IDF，适合深入 BLE / 量产 |
+
+### A. ESP-IDF 5（本分支重点）
+
+```bash
+. $HOME/esp/esp-idf/export.sh   # 按本机 IDF 安装路径调整
+cd idf
+idf.py set-target esp32c3
+idf.py build
+idf.py -p /dev/ttyACM0 flash monitor
+```
+
+用 `idf.py menuconfig` → **Phyphox Maker App** 切换 Hello / Analog / Ultrasonic。详见 [idf/README.md](idf/README.md)。
+
+### B. PlatformIO（Arduino）
 
 ```bash
 cd firmware
@@ -37,13 +56,13 @@ pio device monitor
 
 无需外接传感器：烧录 `01_hello_phyphox` 后即可在手机上看演示曲线。
 
-### 2. 手机连接
+### 手机连接
 
 1. 打开 **phyphox** → 右上角 **+** → **Bluetooth**
 2. 选择名称类似 `Maker-C3-Hello` 的设备
 3. 实验界面会自动加载，开始记录
 
-### 3. 示例一览
+### PlatformIO 示例一览
 
 | 环境名 | 内容 | 传感器 |
 |--------|------|--------|
@@ -64,12 +83,16 @@ pio run -e 05_ultrasonic -t upload
 ## 仓库结构
 
 ```
-firmware/                 PlatformIO 工程
+idf/                      ESP-IDF 5 + NimBLE（推荐深入）
+  components/phyphox_ble/ phyphox 协议组件
+  main/                   Hello / Analog / Ultrasonic
+firmware/                 PlatformIO / Arduino 工程
   include/board_pins.h    统一引脚
   lib/MakerPhyphox/       phyphox 实验辅助库
   examples/               各传感器示例
 docs/hardware.md          接线与电平注意
 docs/activities.md        活动教案建议
+docs/DOWNLOADS.md         预编译固件（Arduino 构建）下载
 ```
 
 ## 活动建议

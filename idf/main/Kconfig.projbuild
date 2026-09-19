@@ -1,0 +1,24 @@
+menu "Phyphox Maker App"
+
+choice PHYPHX_APP
+    prompt "Demo / sensor application"
+    default PHYPHX_APP_HELLO
+    help
+        Select which sensor firmware to build.
+
+config PHYPHX_APP_HELLO
+    bool "01 Hello Phyphox (no sensor)"
+
+config PHYPHX_APP_ANALOG
+    bool "02 Analog ADC (potentiometer / LDR / soil)"
+
+config PHYPHX_APP_ULTRASONIC
+    bool "05 Ultrasonic HC-SR04"
+
+endchoice
+
+config PHYPHX_DEVICE_PREFIX
+    string "BLE device name prefix"
+    default "Maker-C3"
+
+endmenu

@@ -1,0 +1,16 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "app_hello.c"
+        "app_analog.c"
+        "app_ultrasonic.c"
+        "board_pins.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        phyphox_ble
+        nvs_flash
+        driver
+        esp_adc
+        esp_timer
+)

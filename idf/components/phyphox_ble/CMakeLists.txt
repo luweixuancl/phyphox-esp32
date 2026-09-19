@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "phyphox_ble.c"
+        "phyphox_experiment.c"
+        "phyphox_crc.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        nvs_flash
+        bt
+        freertos
+        esp_timer
+)
